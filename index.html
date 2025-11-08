@@ -23,21 +23,37 @@ document.querySelector(".launch-btn").addEventListener("click", e => {
   <body>
     <!-- NAVBAR -->
     <header class="header">
-      <nav class="navbar">
+       <nav class="navbar">
+        <!-- Group 1: Logo (Stays the same) -->
         <a href="#" class="logo">
-          <img src="logo.png" alt="Reflow.ai Logo" class="logo-image" />
-          <span>Reflow.ai</span>
+            <img src="logo.png" alt="Reflow.ai Logo" class="logo-image" />
+            <span>Reflow.ai</span>
         </a>
 
-        <ul class="nav-links">
-          <li><a href="#">Features</a><i class="ri-arrow-down-s-line"></i></li>
-          <li><a href="#">How It Works</a><i class="ri-arrow-down-s-line"></i></li>
-          <li><a href="#">Pricing</a><i class="ri-arrow-down-s-line"></i></li>
-          <li><a href="#">Showcase</a><i class="ri-arrow-down-s-line"></i></li>
-        </ul>
+        <!-- ============================================= -->
+        <!-- Group 2: A new container for all right-side items -->
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li class="dropdown-container">
+                    <a href="#">Features</a><i class="ri-arrow-down-s-line"></i>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">AI Art Generator</a></li>
+                        <li><a href="#">AI Video Generator</a></li>
+                        <li><a href="#">AI Upscaler</a></li>
+                        <li><a href="#">AI Replace</a></li>
+                        <li><a href="#">Background Remover</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">How It Works</a><i class="ri-arrow-down-s-line"></i></li>
+                <li><a href="#">Pricing</a><i class="ri-arrow-down-s-line"></i></li>
+                <li><a href="#">Showcase</a><i class="ri-arrow-down-s-line"></i></li>
+            </ul>
 
-        <a href="./main.html" class="launch-btn" target="_blank">Log in</a>
-      </nav>
+            <a href="#" class="launch-btn">Launch App</a>
+        </div>
+        <!-- ============================================= -->
+
+    </nav>
     </header>
 
     <!-- HERO -->

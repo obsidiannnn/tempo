@@ -32,13 +32,85 @@ body {
   padding: 22px 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* This is the key property! */
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 120px; /* Creates space between the nav links and the button */
 }
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 28px;
+  gap: 35px; /* Space between "Features", "Pricing", etc. */
 }
+.nav-links .dropdown-container {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 160%; /* Start position for the slide effect (below the final position) */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1641; /* Slightly different background to stand out */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 0;
+  list-style: none;
+  width: max-content; /* Make the menu as wide as its longest item */
+  z-index: 100;
+
+  /* Hide the menu by default */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* Prevents clicking on the hidden menu */
+
+  /* Add the smooth transition for the slide-down effect */
+  transition: opacity 0.3s ease, top 0.3s ease, visibility 0.3s;
+}
+
+/* Show the dropdown menu on hover of the parent container */
+.nav-links .dropdown-container:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  top: 120%; /* Final position when visible */
+  pointer-events: auto; /* Allow interaction when visible */
+}
+
+/* Style the links inside the dropdown */
+.dropdown-menu li a {
+  display: block; /* Make the entire area clickable */
+  padding: 8px 20px;
+  color: var(--muted);
+  white-space: nowrap; /* Prevent links from wrapping to a new line */
+  opacity: 1; /* Ensure link opacity is 1 */
+}
+
+.dropdown-menu li a:hover {
+  color: var(--text);
+  background-color: rgba(123, 92, 255, 0.2); /* Add a subtle hover background */
+}
+
+/* ============================ */
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  opacity: 0.75;
+  transition: 0.25s;
+}
+.nav-links a:hover {
+  opacity: 1;
+}
+.launch-btn {
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, var(--primary), var(--primary2));
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
 .nav-links a {
   text-decoration: none;
   color: var(--text);
