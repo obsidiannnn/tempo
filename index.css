@@ -66,9 +66,80 @@ body {
 }
 
 .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 35px;
+    display: flex;
+    list-style: none;
+    gap: 35px; /* Space between each main link */
+    margin: 0;
+    padding: 0;
+}
+.nav-links .dropdown-container {
+    position: relative;
+    display: flex;
+    align-items: center; /* Vertically aligns the text and arrow icon */
+    cursor: pointer;
+}
+
+.nav-links .dropdown-container > a {
+    text-decoration: none;
+    color: var(--text);
+    opacity: 0.75;
+    transition: opacity 0.25s;
+}
+.nav-links .dropdown-container > i {
+    color: var(--text);
+    opacity: 0.75;
+    transition: opacity 0.25s;
+    font-size: 16px; /* Adjust size if needed */
+    margin-left: 4px; /* Space between text and arrow */
+}
+.nav-links .dropdown-container:hover > a,
+.nav-links .dropdown-container:hover > i {
+    opacity: 1;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 160%; /* Start position for the slide effect (below the final position) */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1641;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px 0;
+    list-style: none;
+    width: max-content; /* Menu width adjusts to the longest item */
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    /* Hide the menu by default */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, top 0.3s ease, visibility 0.3s;
+}
+
+/* This is the magic: Show the dropdown on hover of the container */
+.nav-links .dropdown-container:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    top: 130%; /* Final position when visible (closer for a better feel) */
+    pointer-events: auto;
+}
+
+/* Style the links INSIDE the dropdown menu */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 22px; /* More padding for a premium feel */
+    color: var(--muted); /* Muted color for submenu items */
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 15px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    color: var(--text); /* Brighter color on hover */
+    background-color: rgba(123, 92, 255, 0.2); /* Subtle purple highlight */
 }
 
 .nav-links a {
