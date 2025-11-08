@@ -1,104 +1,146 @@
-/* Using Google Fonts for a modern look */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-/* CSS Variables for easy theme management */
+/* === COLOR VARIABLES === */
 :root {
-    --primary-purple: #6a44ff;
-    --primary-purple-hover: #5a37e0;
-    --background-dark: #0f0f1a;
-    --text-primary: #ffffff;
-    --text-secondary: #a1a1aa;
-    --border-radius-sm: 6px;
-    --border-radius-md: 10px;
+  --bg-start: #0b0b1e;
+  --bg-end: #151237;
+  --primary: #7b5cff;
+  --primary-2: #9a7cff;
+  --text: #e7e7ee;
+  --muted: #b9b8c8;
+  --card: #0f1027;
 }
 
-/* Reset and base styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* === GLOBAL === */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #000000;
-    color: var(--text-primary);
+  margin: 0;
+  background: linear-gradient(var(--bg-start), var(--bg-end));
+  color: var(--text);
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Header and Navbar Styling */
-.header {
-    width: 100%;
-    padding: 16px 0;
-    background-color: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+/* Background Animation */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.35;
 }
 
-.navbar {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* HERO CONTENT */
+main {
+  position: relative;
+  z-index: 1;
+  padding: 90px 24px;
+  text-align: center;
+}
+h1 {
+  font-size: 60px;
+  margin: 8px 0;
+}
+.sub {
+  font-size: 20px;
+}
+.desc {
+  max-width: 760px;
+  margin: 18px auto;
+  color: var(--muted);
 }
 
-/* Logo Styling */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: var(--text-primary);
-    font-size: 22px;
-    font-weight: 600;
+/* Input Box */
+.input-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 40px;
+  backdrop-filter: blur(5px);
+}
+.input-wrap input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  color: #fff;
+}
+.btn {
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #fff;
 }
 
-.logo-image {
-    height: 28px; /* <-- Adjust the height of your PNG logo here */
-    width: auto; /* Maintain aspect ratio */
+/* Hex Image Cards */
+.hex-grid {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.hex {
+  width: 190px;
+  aspect-ratio: 1;
+  clip-path: polygon(
+    25% 6.7%,
+    75% 6.7%,
+    100% 50%,
+    75% 93.3%,
+    25% 93.3%,
+    0% 50%
+  );
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.hex img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 14px;
 }
 
-/* Navigation Links */
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 40px;
+/* Stepper */
+.stepper {
+  margin-top: 40px;
+}
+.bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4dd0ff, #a884ff);
+  border-radius: 8px;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease-in-out;
+/* Video Modal */
+dialog {
+  padding: 0;
+  border: none;
+  border-radius: 14px;
+  background: #0b0b1e;
+  max-width: 900px;
+  width: 90%;
 }
-
-.nav-links a:hover {
-    color: var(--text-primary);
+dialog video {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-/* Launch App Button */
-.launch-btn {
-    background-color: var(--primary-purple);
-    color: var(--text-primary);
-    padding: 12px 24px;
-    border-radius: var(--border-radius-sm);
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
-}
-
-.launch-btn:hover {
-    background-color: var(--primary-purple-hover);
-    transform: translateY(-2px);
-}
-
-/* Placeholder for main content demonstration */
-.content-placeholder {
-    height: 100vh;
-    background-image: linear-gradient(180deg, #1e103b 0%, #0c0c1e 100%);
+.close-btn {
+  width: 100%;
+  border-radius: 0;
 }

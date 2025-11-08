@@ -1,22 +1,56 @@
-// script.js for Reflow.ai
+/* Background particle animation */
+const canvas = document.getElementById("bg-canvas");
+const ctx = canvas.getContext("2d");
+let w, h, dots;
+function resize() {
+  w = canvas.width = innerWidth;
+  h = canvas.height = innerHeight;
+  dots = Array.from({ length: 100 }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    vx: (Math.random() - 0.5) * 0.4,
+    vy: (Math.random() - 0.5) * 0.4,
+  }));
+}
+function draw() {
+  ctx.clearRect(0, 0, w, h);
+  dots.forEach((p) => {
+    p.x += p.vx;
+    p.y += p.vy;
+    if (p.x < 0 || p.x > w) p.vx *= -1;
+    if (p.y < 0 || p.y > h) p.vy *= -1;
+    ctx.fillStyle = "#b8d8ff";
+    ctx.fillRect(p.x, p.y, 2, 2);
+  });
+  requestAnimationFrame(draw);
+}
+addEventListener("resize", resize);
+resize();
+draw();
 
-// This script is ready for future enhancements.
-// For example, making the navbar sticky on scroll or handling a mobile menu.
+/* Stepper */
+const scrub = document.getElementById("scrub");
+const fill = document.getElementById("fill");
+scrub.addEventListener(
+  "input",
+  () => (fill.style.width = (scrub.value / 4) * 100 + "%")
+);
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("Reflow.ai page loaded and ready.");
-
-    const launchButton = document.querySelector('.launch-btn');
-
-    if (launchButton) {
-        launchButton.addEventListener('click', (event) => {
-            // Prevent the default link behavior for demonstration
-            event.preventDefault();
-            
-            // You can add any action here, for example:
-            // alert('Redirecting to the app...');
-            // window.location.href = 'https://app.reflow.ai';
-            console.log('Launch App button was clicked.');
-        });
-    }
+/* Popup Video Player */
+const dialog = document.getElementById("player");
+const pv = document.getElementById("pv");
+document.querySelectorAll(".hex").forEach((card) => {
+  card.onclick = () => {
+    pv.src = card.dataset.video;
+    dialog.showModal();
+    pv.play();
+  };
 });
+document.getElementById("close").onclick = () => {
+  pv.pause();
+  pv.src = "";
+  dialog.close();
+};
+
+/* Demo Generate Button */
+document.getElementById("gen").onclick = () => alert("Connect your API here.");
