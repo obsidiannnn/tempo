@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
 
-    <!-- Your CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="1.css" />
   </head>
   <body>
@@ -34,12 +34,11 @@
       </nav>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <main class="hero-section">
-      <!-- Background Animation Canvas -->
       <canvas id="bg-canvas"></canvas>
 
-      <!-- Hexagon Visual Layer -->
+      <!-- Floating Visual Hexagons -->
       <div class="visuals-grid">
         <div class="hexagon-container hex-1">
           <div
@@ -47,6 +46,7 @@
             data-video="https://assets.mixkit.co/videos/preview/mixkit-underwater-ocean-with-fish-and-rays-of-light-34-large.mp4"
           >
             <img src="https://i.imgur.com/3N22p5s.jpeg" alt="" />
+            <video loop muted playsinline></video>
             <div class="play-overlay"><i class="ri-play-fill"></i></div>
           </div>
         </div>
@@ -57,6 +57,7 @@
             data-video="https://assets.mixkit.co/videos/preview/mixkit-a-futuristic-city-42930-large.mp4"
           >
             <img src="https://i.imgur.com/kC11gXU.jpeg" alt="" />
+            <video loop muted playsinline></video>
             <div class="play-overlay"><i class="ri-play-fill"></i></div>
           </div>
         </div>
@@ -67,6 +68,7 @@
             data-video="https://assets.mixkit.co/videos/preview/mixkit-space-rocket-taking-off-in-the-sun-29548-large.mp4"
           >
             <img src="https://i.imgur.com/1i3R5gy.jpeg" alt="" />
+            <video loop muted playsinline></video>
             <div class="play-overlay"><i class="ri-play-fill"></i></div>
           </div>
         </div>
@@ -77,19 +79,19 @@
             data-video="https://assets.mixkit.co/videos/preview/mixkit-top-view-of-a-table-with-food-23176-large.mp4"
           >
             <img src="https://i.imgur.com/zWz0d5G.jpeg" alt="" />
+            <video loop muted playsinline></video>
             <div class="play-overlay"><i class="ri-play-fill"></i></div>
           </div>
         </div>
       </div>
 
-      <!-- Main Content -->
+      <!-- Text + Story Input -->
       <div class="hero-content">
         <p class="brand-title">Reflow.ai</p>
         <h1>Transform Stories into Visual Journeys</h1>
         <p class="subtext">
-          Unlock your imagination. Input any story, script, or idea and our AI
-          generates a complete video reel with dynamic visuals, synchronized
-          dialogue, and custom soundtracks — instantly.
+          Input a story, script, or idea and our AI turns it into a full
+          cinematic reel.
         </p>
 
         <form class="story-form">
@@ -101,14 +103,30 @@
           <button type="button" id="generate-btn">Generate Reel</button>
         </form>
 
-        <div class="stepper">
-          <div class="step active">Story Input</div>
-          <div class="step">AI Scripting</div>
-          <div class="step">Image Generation</div>
-          <div class="step">Audio Sync</div>
-          <div class="step">Final Reel</div>
-        </div>
-      </div>
+        <div class="stepper-wrapper">
+  <div class="stepper-line">
+    <div class="stepper-progress"></div>
+    <div class="stepper-ball"></div>
+  </div>
+
+  <div class="stepper">
+    <span class="step active" data-step="0">Story Input</span>
+    <span class="step" data-step="1">AI Scripting</span>
+    <span class="step" data-step="2">Image Generation</span>
+    <span class="step" data-step="3">Audio Sync</span>
+    <span class="step" data-step="4">Final Reel</span>
+  </div>
+
+  <div class="step-dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+
+
     </main>
 
     <!-- VIDEO MODAL -->
@@ -117,7 +135,7 @@
       <button id="close-modal">Close</button>
     </dialog>
 
-    <!-- Your JS -->
+    <!-- JS -->
     <script src="1.js"></script>
   </body>
 </html>
