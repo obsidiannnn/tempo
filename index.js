@@ -225,3 +225,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Your existing JavaScript for category buttons will remain here.
+document.addEventListener('DOMContentLoaded', () => {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            console.log(`Category clicked: ${button.textContent}`);
+        });
+    });
+
+    // No JavaScript for video sliding needed for the continuous CSS marquee effect
+});

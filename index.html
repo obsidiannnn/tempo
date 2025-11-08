@@ -14,6 +14,12 @@
     <!-- CSS -->
     <link rel="stylesheet" href="index.css" />
   </head>
+  <script>
+document.querySelector(".launch-btn").addEventListener("click", e => {
+  e.preventDefault();
+  window.location.href = "main.html";
+});
+</script>
   <body>
     <!-- NAVBAR -->
     <header class="header">
@@ -30,7 +36,7 @@
           <li><a href="#">Showcase</a><i class="ri-arrow-down-s-line"></i></li>
         </ul>
 
-        <a href="#" class="launch-btn">Launch App</a>
+        <a href="./main.html" class="launch-btn" target="_blank">Log in</a>
       </nav>
     </header>
 
@@ -241,6 +247,125 @@
             </div>
         </div>
     </section>
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose PicLumen?</h2>
+            <p class="section-description">
+                Unlock unparalleled creative potential with our advanced AI tools designed for every need.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="material-icons feature-icon">auto_awesome</span>
+                    <h3 class="feature-title">Intuitive AI</h3>
+                    <p class="feature-text">Effortlessly generate stunning visuals with user-friendly AI prompts and tools.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons feature-icon">palette</span>
+                    <h3 class="feature-title">Diverse Styles</h3>
+                    <p class="feature-text">Explore an endless array of artistic styles, from realism to fantasy and more.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons feature-icon">speed</span>
+                    <h3 class="feature-title">Blazing Fast</h3>
+                    <p class="feature-text">Get high-quality images in seconds, boosting your productivity and workflow.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons feature-icon">edit</span>
+                    <h3 class="feature-title">Easy Customization</h3>
+                    <p class="feature-text">Fine-tune your creations with powerful editing features and advanced controls.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons feature-icon">cloud_upload</span>
+                    <h3 class="feature-title">Cloud Integration</h3>
+                    <p class="feature-text">Seamlessly save, access, and manage your projects across all devices.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons feature-icon">security</span>
+                    <h3 class="feature-title">Secure & Private</h3>
+                    <p class="feature-text">Your creative work and data are always protected with top-tier security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ... (previous code) ... -->
+    </section>
+
+    <!-- ================== -->
+    <!--  CTA Section -->
+    <!-- ================== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Create Your AI Artworks Now!</h2>
+            <p class="cta-text">
+                Turn your concepts into creative visuals with PicLumen's free AI image generator.
+                Begin your journey and bring your imagination to life.
+            </p>
+            <a href="#" class="cta-btn">Generate for FREE</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Column 1: Brand Info -->
+            <div class="footer-column brand-info">
+                <a href="#" class="footer-logo">
+                    <!-- You can use an SVG or an img tag for your logo -->
+                    <img src="logo.png" alt="PicLumen Logo">
+                    <span>PicLumen</span>
+                </a>
+                <p class="footer-tagline">Your AI image toolbox.</p>
+                
+                <div class="language-selector">
+                    <button>English</button>
+                </div>
+                
+            </div>
+
+            <!-- Spacer Column to create distance -->
+            <div class="footer-column spacer"></div>
+
+            <!-- Column 2: AI Tools -->
+            <div class="footer-column links-column">
+                <h3 class="footer-heading">AI Tools</h3>
+                <ul class="footer-links">
+                    <li><a href="#">AI Art Generator</a></li>
+                    <li><a href="#">AI Video Generator</a></li>
+                    <li><a href="#">AI Replace</a></li>
+                    <li><a href="#">AI Image Extender</a></li>
+                    <li><a href="#">AI Upscaler</a></li>
+                    <li><a href="#">AI Colorizer</a></li>
+                    <li><a href="#">Background Remover</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Support -->
+            <div class="footer-column links-column">
+                <h3 class="footer-heading">Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Tutorial</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Studio</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sub-Footer -->
+        <div class="sub-footer">
+            <p class="copyright">&copy; 2024-2025 Grand Vision Tech Software Limited. All Rights Reserved.</p>
+            <div class="legal-links">
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">DMCA</a>
+                <a href="#">Copyright Policy</a>
+                <a href="#">Security Policy</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
     <!-- JS -->
     <script src="index.js"></script>
   </body>
