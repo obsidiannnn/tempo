@@ -5,192 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReelCraft AI - Your Stories. Transformed into Captivating Reels. Instantly.</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            color: #fff;
-            background-color: #000;
-            overflow-x: hidden;
-        }
-
-        .container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .background-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            z-index: -1;
-            overflow: hidden; /* To prevent images from spilling out */
-        }
-
-        .background-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.4); /* Darken images for better text contrast */
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background: rgba(0, 0, 0, 0.4); /* Slightly transparent background for the navbar */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 10;
-        }
-
-        .navbar .logo {
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .navbar .logo img {
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        .navbar .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .navbar .nav-links a:hover {
-            color: #4CAF50; /* A subtle hover effect */
-        }
-
-        .navbar .get-started-btn {
-            background-color: #007bff; /* Blue button */
-            color: #fff;
-            padding: 10px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .navbar .get-started-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .hero-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding-left: 50px;
-            text-align: left;
-            z-index: 5;
-            max-width: 600px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .hero-content p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .create-reel-btn {
-            background-color: #ff6f00; /* Orange button */
-            color: #fff;
-            padding: 15px 40px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .create-reel-btn img {
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        .create-reel-btn:hover {
-            background-color: #e65100;
-        }
-
-        .credit-info {
-            font-size: 0.9em;
-            margin-top: 15px;
-            opacity: 0.8;
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-                flex-wrap: wrap;
-            }
-
-            .navbar .nav-links {
-                display: none; /* Hide nav links on small screens for simplicity */
-            }
-
-            .navbar .get-started-btn {
-                margin-top: 10px;
-            }
-
-            .hero-content {
-                padding: 30px;
-                text-align: center;
-                align-items: center;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5em;
-            }
-
-            .hero-content p {
-                font-size: 1em;
-            }
-
-            .create-reel-btn {
-                padding: 12px 30px;
-                font-size: 1em;
-            }
-
-            .background-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(4, 1fr);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="background-grid">
             <img src="https://i.imgur.com/w1i21pP.jpeg" alt="Magical Forest Scene" class="background-image top-left">
-            <img src="https://images.unsplash.com/photo-1616262373426-18bfa28bafab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHJhZ29ufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600">
+            <img src="https://i.imgur.com/o28B5P4.jpeg" alt="Dragon in Mountains" class="background-image top-right">
             <img src="https://i.imgur.com/8Q0D7xN.jpeg" alt="Hands on Tablet Generating Reel" class="background-image bottom-left">
             <img src="https://i.imgur.com/b5gVzK1.jpeg" alt="Reel Generation Interface" class="background-image bottom-right">
+            <!-- Added more image placeholders for a denser background -->
+            <img src="https://i.imgur.com/w1i21pP.jpeg" alt="Fantasy Landscape" class="background-image extra-1">
+            <img src="https://i.imgur.com/o28B5P4.jpeg" alt="Epic Battle Scene" class="background-image extra-2">
+            <img src="https://i.imgur.com/8Q0D7xN.jpeg" alt="Sci-Fi City" class="background-image extra-3">
+            <img src="https://i.imgur.com/b5gVzK1.jpeg" alt="Underwater World" class="background-image extra-4">
         </div>
 
         <nav class="navbar">
@@ -215,9 +43,6 @@
             </a>
             <p class="credit-info">No credit card required. Cancel anytime.</p>
         </div>
-
-        <!-- This space intentionally left blank for the bottom part of the page,
-             as the design shows content primarily in the top-left quadrant. -->
     </div>
 </body>
 </html>
