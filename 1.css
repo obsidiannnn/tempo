@@ -1,182 +1,104 @@
-body {
+/* Using Google Fonts for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Variables for easy theme management */
+:root {
+    --primary-purple: #6a44ff;
+    --primary-purple-hover: #5a37e0;
+    --background-dark: #0f0f1a;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --border-radius-sm: 6px;
+    --border-radius-md: 10px;
+}
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    background-color: #000;
-    overflow-x: hidden;
+    padding: 0;
 }
 
-.container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000000;
+    color: var(--text-primary);
 }
 
-.background-grid {
+/* Header and Navbar Styling */
+.header {
+    width: 100%;
+    padding: 16px 0;
+    background-color: transparent;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    /* This creates a 4x2 grid, adjust as needed for more images */
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    z-index: -1;
-    overflow: hidden;
-}
-
-.background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.4); /* Darken images for better text contrast */
+    z-index: 1000;
 }
 
 .navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
 }
 
-.navbar .logo {
+/* Logo Styling */
+.logo {
     display: flex;
     align-items: center;
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.navbar .logo img {
-    height: 30px;
-    margin-right: 10px;
-    /* You might want a transparent or white logo for better contrast */
-    filter: invert(1); /* Inverts colors, useful if your logo is dark */
-}
-
-.navbar .nav-links a {
-    color: #fff;
+    gap: 12px;
     text-decoration: none;
-    margin-left: 30px;
+    color: var(--text-primary);
+    font-size: 22px;
     font-weight: 600;
-    transition: color 0.3s ease;
 }
 
-.navbar .nav-links a:hover {
-    color: #4CAF50;
+.logo-image {
+    height: 28px; /* <-- Adjust the height of your PNG logo here */
+    width: auto; /* Maintain aspect ratio */
 }
 
-.navbar .get-started-btn {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.navbar .get-started-btn:hover {
-    background-color: #0056b3;
-}
-
-.hero-content {
-    flex-grow: 1;
+/* Navigation Links */
+.nav-links {
+    list-style: none;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 50px;
-    text-align: left;
-    z-index: 5;
-    max-width: 600px;
-}
-
-.hero-content h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    font-weight: 700;
-}
-
-.hero-content p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    line-height: 1.6;
-}
-
-.create-reel-btn {
-    background-color: #ff6f00;
-    color: #fff;
-    padding: 15px 40px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: 700;
-    display: inline-flex;
     align-items: center;
-    transition: background-color 0.3s ease;
+    gap: 40px;
 }
 
-.create-reel-btn img {
-    height: 24px;
-    margin-right: 10px;
-    /* Invert for play icon if it's a dark image */
-    filter: invert(1);
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
 }
 
-.create-reel-btn:hover {
-    background-color: #e65100;
+.nav-links a:hover {
+    color: var(--text-primary);
 }
 
-.credit-info {
-    font-size: 0.9em;
-    margin-top: 15px;
-    opacity: 0.8;
+/* Launch App Button */
+.launch-btn {
+    background-color: var(--primary-purple);
+    color: var(--text-primary);
+    padding: 12px 24px;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 15px 20px;
-        flex-wrap: wrap;
-    }
+.launch-btn:hover {
+    background-color: var(--primary-purple-hover);
+    transform: translateY(-2px);
+}
 
-    .navbar .nav-links {
-        display: none; /* Hide nav links on small screens for simplicity */
-    }
-
-    .navbar .get-started-btn {
-        margin-top: 10px;
-    }
-
-    .hero-content {
-        padding: 30px;
-        text-align: center;
-        align-items: center;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-
-    .hero-content p {
-        font-size: 1em;
-    }
-
-    .create-reel-btn {
-        padding: 12px 30px;
-        font-size: 1em;
-    }
-
-    .background-grid {
-        grid-template-columns: 1fr; /* Stack images vertically on small screens */
-        grid-template-rows: repeat(8, 1fr); /* Each image takes a row */
-    }
+/* Placeholder for main content demonstration */
+.content-placeholder {
+    height: 100vh;
+    background-image: linear-gradient(180deg, #1e103b 0%, #0c0c1e 100%);
 }
