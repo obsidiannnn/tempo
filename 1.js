@@ -131,3 +131,97 @@ steps.forEach(step => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove 'active' class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add 'active' class to the clicked button
+            button.classList.add('active');
+
+            // You can add more functionality here,
+            // e.g., filtering content based on the active category.
+            console.log(`Category clicked: ${button.textContent}`);
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    // Category Buttons Logic (remains the same)
+    const categoryButtons = document.querySelectorAll('.category-btn');
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            console.log(`Category clicked: ${button.textContent}`);
+        });
+    });
+
+    // --- Video Slider Logic ---
+    const videoTrackContainer = document.querySelector('.video-track-container');
+    const videoItems = document.querySelectorAll('.video-item');
+    // Start at the last item index for rightward scrolling so we can scroll back
+    let currentIndex = 0; // Will represent the current "first" item in view
+
+    if (videoTrackContainer && videoItems.length > 0) {
+        const itemWidth = videoItems[0].offsetWidth; // Get the width of a single video item
+        const gap = 20; // The gap defined in CSS between video items
+        const itemAndGapWidth = itemWidth + gap;
+        const maxScrollLeft = (videoItems.length - 1) * itemAndGapWidth; // Max scroll position
+
+        // Initialize scroll position to the end to allow immediate rightward scroll
+        // This makes the last few items visible initially.
+        // For a more traditional "rightward" scroll, we might start at 0 and prepend elements.
+        // For simple `scrollLeft` manipulation and continuous loop, it's easier to think
+        // of it as decrementing the scroll position.
+
+        // Let's refine the logic to simulate "slide right" more intuitively.
+        // Instead of decrementing scrollLeft, we can shift items.
+        // Or, if we want to stick to scrollLeft, we need to consider an "infinite" loop
+        // where content is dynamically added/removed.
+
+        // A simpler approach for "slide right" with `scrollLeft` is to
+        // start at `maxScrollLeft` and decrement, then loop back.
+
+        // Let's adjust for a smoother rightward loop:
+        // 1. Duplicate content dynamically if we want a truly seamless rightward loop with scrollLeft.
+        // 2. Or, just scroll from right-to-left (decreasing scrollLeft) and reset.
+
+        // Option 3: Use array methods to shift elements for truly "rightward" animation
+        // This will create a better visual effect for "content coming in from the left".
+        const videoTrack = document.querySelector('.video-track');
+
+        const slideRight = () => {
+            // Get the last item
+            const lastItem = videoTrack.lastElementChild;
+            if (!lastItem) return;
+
+            // Prepend the last item to the beginning of the track
+            videoTrack.prepend(lastItem);
+
+            // Temporarily set scrollLeft to move past the new first item
+            videoTrackContainer.scrollLeft = itemAndGapWidth;
+
+            // Animate scroll back to 0 to show the new item smoothly sliding in
+            setTimeout(() => {
+                videoTrackContainer.scrollLeft = 0;
+            }, 50); // Small delay to allow initial scrollLeft to register
+        };
+
+        // Set an interval for automatic sliding
+        let slideInterval = setInterval(slideRight, 4000); // Change video every 4 seconds
+
+        // Optional: Pause auto-slide on hover
+        videoTrackContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        videoTrackContainer.addEventListener('mouseleave', () => {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(slideRight, 4000);
+        });
+    }
+});
