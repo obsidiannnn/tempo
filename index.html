@@ -1,189 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reflow.ai - Transform Stories into Visual Journeys</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reflow.ai - Transform Stories into Visual Journeys</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="index.css" />
-</head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="logo">
+          <img src="logo.png" alt="Reflow.ai Logo" class="logo-image" />
+          <span>Reflow.ai</span>
+        </a>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li class="dropdown-container">
+              <a href="#">Features</a><i class="ri-arrow-down-s-line"></i>
+              <ul class="dropdown-menu">
+                <li><a href="#">AI Art Generator</a></li>
+                <li><a href="#">AI Video Generator</a></li>
+                <li><a href="#">AI Upscaler</a></li>
+                <li><a href="#">AI Replace</a></li>
+                <li><a href="#">Background Remover</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">How It Works</a><i class="ri-arrow-down-s-line"></i>
+            </li>
+            <li><a href="#">Pricing</a><i class="ri-arrow-down-s-line"></i></li>
+            <li>
+              <a href="#">Showcase</a><i class="ri-arrow-down-s-line"></i>
+            </li>
+          </ul>
+          <a href="./main.html" class="launch-btn" target="_blank">Log in</a>
+        </div>
+      </nav>
+    </header>
 
-<body>
-  <!-- NAVBAR -->
-  <header class="header">
-    <nav class="navbar">
-      <a href="#" class="logo">
-        <img src="logo.png" alt="Reflow.ai Logo" class="logo-image" />
-        <span>Reflow.ai</span>
-      </a>
-      <div class="nav-right">
-        <ul class="nav-links">
-          <li class="dropdown-container">
-            <a href="#">Features</a><i class="ri-arrow-down-s-line"></i>
-            <ul class="dropdown-menu">
-              <li><a href="#">AI Art Generator</a></li>
-              <li><a href="#">AI Video Generator</a></li>
-              <li><a href="#">AI Upscaler</a></li>
-              <li><a href="#">AI Replace</a></li>
-              <li><a href="#">Background Remover</a></li>
-            </ul>
-          </li>
-          <li><a href="#">How It Works</a><i class="ri-arrow-down-s-line"></i></li>
-          <li><a href="#">Pricing</a><i class="ri-arrow-down-s-line"></i></li>
-          <li><a href="#">Showcase</a><i class="ri-arrow-down-s-line"></i></li>
-        </ul>
-        <a href="#" class="launch-btn" target="_blank">Log in</a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- HERO SECTION -->
-  <main class="hero-section">
-    <canvas id="bg-canvas"></canvas>
-    <div class="visuals-grid">
-      <div class="hexagon-container hex-1">
-        <div class="hexagon"
-          data-video="https://assets.mixkit.co/videos/preview/mixkit-underwater-ocean-with-fish-and-rays-of-light-34-large.mp4">
-          <img src="https://i.imgur.com/3N22p5s.jpeg" alt="Underwater scene" /><video loop muted playsinline></video>
-          <div class="play-overlay"><i class="ri-play-fill"></i></div>
+    <!-- HERO SECTION -->
+    <main class="hero-section">
+      <canvas id="bg-canvas"></canvas>
+      <div class="visuals-grid">
+        <div class="hexagon-container hex-1">
+          <div
+            class="hexagon"
+            data-video="https://assets.mixkit.co/videos/preview/mixkit-underwater-ocean-with-fish-and-rays-of-light-34-large.mp4"
+          >
+            <img
+              src="https://i.imgur.com/3N22p5s.jpeg"
+              alt="Underwater scene"
+            /><video loop muted playsinline></video>
+            <div class="play-overlay"><i class="ri-play-fill"></i></div>
+          </div>
+        </div>
+        <div class="hexagon-container hex-2">
+          <div
+            class="hexagon"
+            data-video="https://assets.mixkit.co/videos/preview/mixkit-a-futuristic-city-42930-large.mp4"
+          >
+            <img
+              src="https://i.imgur.com/kC11gXU.jpeg"
+              alt="Futuristic city"
+            /><video loop muted playsinline></video>
+            <div class="play-overlay"><i class="ri-play-fill"></i></div>
+          </div>
+        </div>
+        <div class="hexagon-container hex-3">
+          <div
+            class="hexagon"
+            data-video="https://assets.mixkit.co/videos/preview/mixkit-space-rocket-taking-off-in-the-sun-29548-large.mp4"
+          >
+            <img
+              src="https://i.imgur.com/1i3R5gy.jpeg"
+              alt="Rocket launch"
+            /><video loop muted playsinline></video>
+            <div class="play-overlay"><i class="ri-play-fill"></i></div>
+          </div>
+        </div>
+        <div class="hexagon-container hex-4">
+          <div
+            class="hexagon"
+            data-video="https://assets.mixkit.co/videos/preview/mixkit-top-view-of-a-table-with-food-23176-large.mp4"
+          >
+            <img
+              src="https://i.imgur.com/zWz0d5G.jpeg"
+              alt="Food table"
+            /><video loop muted playsinline></video>
+            <div class="play-overlay"><i class="ri-play-fill"></i></div>
+          </div>
         </div>
       </div>
-      <div class="hexagon-container hex-2">
-        <div class="hexagon"
-          data-video="https://assets.mixkit.co/videos/preview/mixkit-a-futuristic-city-42930-large.mp4"><img
-            src="https://i.imgur.com/kC11gXU.jpeg" alt="Futuristic city" /><video loop muted playsinline></video>
-          <div class="play-overlay"><i class="ri-play-fill"></i></div>
+      <div class="hero-content">
+        <p class="brand-title">Reflow.ai</p>
+        <h1>Transform Stories into Visual Journeys</h1>
+        <p class="subtext">
+          Input a story, script, or idea and our AI turns it into a full
+          cinematic reel.
+        </p>
+        <form class="story-form">
+          <input
+            id="story-input"
+            type="text"
+            placeholder="Type your story or paste..."
+          /><button type="button" id="generate-btn">Generate Reel</button>
+        </form>
+        <div class="stepper-wrapper">
+          <div class="stepper-line">
+            <div class="stepper-progress"></div>
+            <div class="stepper-ball"></div>
+          </div>
+          <div class="stepper">
+            <span class="step active" data-step="0">Story Input</span
+            ><span class="step" data-step="1">AI Scripting</span
+            ><span class="step" data-step="2">Image Generation</span
+            ><span class="step" data-step="3">Audio Sync</span
+            ><span class="step" data-step="4">Final Reel</span>
+          </div>
+          <div class="step-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
         </div>
       </div>
-      <div class="hexagon-container hex-3">
-        <div class="hexagon"
-          data-video="https://assets.mixkit.co/videos/preview/mixkit-space-rocket-taking-off-in-the-sun-29548-large.mp4">
-          <img src="https://i.imgur.com/1i3R5gy.jpeg" alt="Rocket launch" /><video loop muted playsinline></video>
-          <div class="play-overlay"><i class="ri-play-fill"></i></div>
-        </div>
-      </div>
-      <div class="hexagon-container hex-4">
-        <div class="hexagon"
-          data-video="https://assets.mixkit.co/videos/preview/mixkit-top-view-of-a-table-with-food-23176-large.mp4"><img
-            src="https://i.imgur.com/zWz0d5G.jpeg" alt="Food table" /><video loop muted playsinline></video>
-          <div class="play-overlay"><i class="ri-play-fill"></i></div>
+    </main>
+
+    <!-- VIDEO MODAL -->
+    <dialog id="video-modal">
+      <video id="modal-video" controls></video
+      ><button id="close-modal">Close</button>
+    </dialog>
+
+    <!-- SCROLLING VIDEO GALLERY -->
+    <div class="video-gallery-section">
+      <div class="video-track-wrapper">
+        <div class="video-track">
+          <!-- Videos are duplicated for seamless loop -->
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Aesthetic-Lo-fi-Japan-Style-Animation.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Street-Racer.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Rain-at-Night.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Synthwave-Scifi-Retro-Animation.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Aesthetic-Lo-fi-Japan-Style-Animation.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Street-Racer.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Aesthetic-Lo-fi-Japan-Style-Animation.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Street-Racer.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Rain-at-Night.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Synthwave-Scifi-Retro-Animation.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Aesthetic-Lo-fi-Japan-Style-Animation.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="gallery-video" autoplay muted loop playsinline>
+              <source
+                src="https://assets.coverr.co/videos/mp4/Street-Racer.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
         </div>
       </div>
     </div>
-    <div class="hero-content">
-      <p class="brand-title">Reflow.ai</p>
-      <h1>Transform Stories into Visual Journeys</h1>
-      <p class="subtext">Input a story, script, or idea and our AI turns it into a full cinematic reel.</p>
-      <form class="story-form"><input id="story-input" type="text" placeholder="Type your story or paste..." /><button
-          type="button" id="generate-btn">Generate Reel</button></form>
-      <div class="stepper-wrapper">
-        <div class="stepper-line">
-          <div class="stepper-progress"></div>
-          <div class="stepper-ball"></div>
-        </div>
-        <div class="stepper"><span class="step active" data-step="0">Story Input</span><span class="step"
-            data-step="1">AI Scripting</span><span class="step" data-step="2">Image Generation</span><span class="step"
-            data-step="3">Audio Sync</span><span class="step" data-step="4">Final Reel</span></div>
-        <div class="step-dots">
-          <div class="dot active"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
+
+    <!-- AI GENERATOR SECTION -->
+    <section class="ai-generator-section">
+      <div class="container">
+        <h2 class="section-title">Preview Endless Possibilities</h2>
+        <p class="section-description">
+          Explore the fascinating collection of AI-generated videos in several
+          styles.
+        </p>
+        <div class="categories">
+          <button class="category-btn">Concept art</button>
+          <button class="category-btn">Character design</button>
+          <button class="category-btn active">Logo design</button>
+          <button class="category-btn">Fashion design</button>
+          <button class="category-btn">Game assets</button>
+          <button class="category-btn">Architecture</button>
         </div>
       </div>
-    </div>
-  </main>
-  <dialog id="video-modal"><video id="modal-video" controls></video><button id="close-modal">Close</button></dialog>
-  <div class="video-gallery-section">
-    <div class="video-track-wrapper">
-      <div class="video-track">
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Aesthetic-Lo-fi-Japan-Style-Animation.mp4"
-              type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Street-Racer.mp4" type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Rain-at-Night.mp4" type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Synthwave-Scifi-Retro-Animation.mp4" type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Aesthetic-Lo-fi-Japan-Style-Animation.mp4"
-              type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Street-Racer.mp4" type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Aesthetic-Lo-fi-Japan-Style-Animation.mp4"
-              type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Street-Racer.mp4" type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Rain-at-Night.mp4" type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Synthwave-Scifi-Retro-Animation.mp4" type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Aesthetic-Lo-fi-Japan-Style-Animation.mp4"
-              type="video/mp4">
-          </video></div>
-        <div class="video-item"><video class="gallery-video" autoplay muted loop playsinline>
-            <source src="https://assets.coverr.co/videos/mp4/Street-Racer.mp4" type="video/mp4">
-          </video></div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- AI GENERATOR SECTION -->
-  <section class="ai-generator-section">
-    <div class="container">
-      <h2 class="section-title">Preview Endless Possibilities</h2>
-      <p class="section-description">Explore the fascinating collection of AI-generated videos in several styles.</p>
-      <div class="categories">
-        <button class="category-btn">Concept art</button>
-        <button class="category-btn">Character design</button>
-        <button class="category-btn active">Logo design</button>
-        <button class="category-btn">Fashion design</button>
-        <button class="category-btn">Game assets</button>
-        <button class="category-btn">Architecture</button>
+    <!-- VIDEO CAROUSEL SECTION -->
+    <section class="video-carousel-section">
+      <div class="carousel-container">
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carousel-track">
+            <!-- Video slides will be inserted here by JavaScript -->
+          </div>
+        </div>
+        <button id="carousel-prev-btn" class="carousel-nav-btn">
+          <i class="ri-arrow-left-s-line"></i>
+        </button>
+        <button id="carousel-next-btn" class="carousel-nav-btn">
+          <i class="ri-arrow-right-s-line"></i>
+        </button>
       </div>
-    </div>
-  </section>
+      <div class="video-progress-bar">
+        <div id="video-progress-fill" class="video-progress-fill"></div>
+      </div>
+    </section>
 
-  <!-- VIDEO CAROUSEL SECTION -->
-  <section class="video-carousel-section">
-    <div class="carousel-container">
-      <div class="carousel-viewport">
-        <div class="carousel-track" id="carousel-track">
-          <!-- Video slides will be inserted here by JavaScript -->
+    <!-- FEATURES SECTION -->
+    <section class="features-section">
+      <div class="container">
+        <h2 class="section-title">Why Choose Us?</h2>
+        <p class="section-description">
+          Unlock unparalleled creative potential with our advanced AI tools.
+        </p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="material-icons feature-icon">auto_awesome</span>
+            <h3 class="feature-title">Intuitive AI</h3>
+            <p class="feature-text">
+              Effortlessly generate stunning visuals with user-friendly prompts.
+            </p>
+          </div>
+          <div class="feature-card">
+            <span class="material-icons feature-icon">palette</span>
+            <h3 class="feature-title">Diverse Styles</h3>
+            <p class="feature-text">
+              Explore endless artistic styles, from realism to fantasy.
+            </p>
+          </div>
+          <div class="feature-card">
+            <span class="material-icons feature-icon">speed</span>
+            <h3 class="feature-title">Blazing Fast</h3>
+            <p class="feature-text">
+              Get high-quality images in seconds, boosting your workflow.
+            </p>
+          </div>
         </div>
       </div>
-      <button id="carousel-prev-btn" class="carousel-nav-btn"><i class="ri-arrow-left-s-line"></i></button>
-      <button id="carousel-next-btn" class="carousel-nav-btn"><i class="ri-arrow-right-s-line"></i></button>
-    </div>
-    <div class="video-progress-bar">
-      <div id="video-progress-fill" class="video-progress-fill"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FEATURES SECTION -->
-  <section class="features-section"><!-- ... Features content remains the same ... --></section>
-  <!-- CTA SECTION -->
-  <section class="cta-section"><!-- ... CTA content remains the same ... --></section>
-  <!-- FOOTER -->
-  <footer class="site-footer"><!-- ... Footer content remains the same ... --></footer>
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">Create Your AI Artworks Now!</h2>
+        <p class="cta-text">
+          Turn your concepts into creative visuals. Begin your journey and bring
+          your imagination to life.
+        </p>
+        <a href="#" class="cta-btn">Generate for FREE</a>
+      </div>
+    </section>
 
-  <script src="index.js"></script>
-</body>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-column brand-info">
+          <a href="#" class="footer-logo"><span>Reflow.ai</span></a>
+          <p class="footer-tagline">Your AI image toolbox.</p>
+          <div class="language-selector">
+            <button>English</button>
+          </div>
+        </div>
+        <div class="footer-column spacer"></div>
+        <div class="footer-column links-column">
+          <h3 class="footer-heading">AI Tools</h3>
+          <ul class="footer-links">
+            <li><a href="#">AI Art Generator</a></li>
+            <li><a href="#">AI Video Generator</a></li>
+            <li><a href="#">AI Upscaler</a></li>
+          </ul>
+        </div>
+        <div class="footer-column links-column">
+          <h3 class="footer-heading">Support</h3>
+          <ul class="footer-links">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sub-footer">
+        <p class="copyright">&copy; 2024 Reflow.ai. All Rights Reserved.</p>
+        <div class="legal-links">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
 
+    <script src="index.js"></script>
+  </body>
 </html>
